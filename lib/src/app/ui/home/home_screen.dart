@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/src/app/ui/home/post_widget.dart';
 
 import './status_widget.dart';
-import './../../../utils/status_data.dart';
+import './../../../utils/create_data.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    StatusData.createStatus();
+    CreateData.createStatus();
+    CreateData.createPost(1, 1, 1);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 30,
@@ -17,37 +19,31 @@ class HomeScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.headline1,
         ),
       ),
-      body: Container(
-        height: MediaQuery.of(context).size.height - 30,
-        width: MediaQuery.of(context).size.width,
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 81,
-              decoration: const BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Colors.black,
-                  ),
-                ),
-              ),
+              // decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black))),
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
+                // physics: const NeverScrollableScrollPhysics(),
+                // shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: StatusData.statusList.length,
+                itemCount: CreateData.statusList.length,
                 itemBuilder: (context, position) =>
-                    StatusWidget(StatusData.statusList[position]),
+                    StatusWidget(CreateData.statusList[position]),
               ),
             ),
-            Expanded(
-              child: Container(
-                decoration:                    BoxDecoration(border: Border.all(color: Colors.black)),
-                child: ListView.builder(
-                  itemCount: StatusData.statusList.length,
+            const Divider(
+              thickness: 2,
+            ),
+            ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: CreateData.postList.length,
                   itemBuilder: (context, position) =>
-                      StatusWidget(StatusData.statusList[position]),
-                ),
-              ),
+                      PostWidget(CreateData.postList[position]),
             ),
           ],
         ),

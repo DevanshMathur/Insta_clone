@@ -26,6 +26,9 @@ class AppTheme {
           ),
           bodyText1: TextStyle(
             color: Colors.black,
+          ),
+          bodyText2: TextStyle(
+            color: Colors.grey,
           )));
 
   static ThemeData darkTheme = ThemeData(

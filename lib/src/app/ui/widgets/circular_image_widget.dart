@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/src/app/ui/widgets/square_image_view.dart';
 
 class CircularImageWidget extends StatelessWidget {
   final String imageUrl;
@@ -9,13 +10,7 @@ class CircularImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(40),
-      child: FadeInImage.assetNetwork(
-        placeholder: "assets/images/loading.jpg",
-        image: 'https://picsum.photos/250?image=9',
-        imageErrorBuilder: (context, error, stakeTrace) {
-          return Image.asset("assets/images/image-not-found.jpg");
-        },
-      ),
+      child: SquareImageWidget(imageUrl),
     );
   }
 }
