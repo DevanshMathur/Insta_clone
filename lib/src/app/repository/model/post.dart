@@ -1,5 +1,3 @@
-import 'package:insta_clone/src/app/repository/model/post_type_enum.dart';
-
 class Post {
   final String name;
   final String profileUrl;

@@ -17,7 +17,7 @@ class AppTheme {
           headline1: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
-            fontSize: 16,
+            fontSize: 20,
           ),
           headline2: TextStyle(
             color: Colors.black,

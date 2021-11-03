@@ -7,7 +7,7 @@ class SquareImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInImage.assetNetwork(
-      fit: BoxFit.fitWidth,
+      // fit: BoxFit.fitWidth,
       placeholder: "assets/images/loading.jpg",
       image: 'https://picsum.photos/250?image=9',
       imageErrorBuilder: (context, error, stakeTrace) {

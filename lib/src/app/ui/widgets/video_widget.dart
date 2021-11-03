@@ -21,7 +21,8 @@ class _VideoWidgetState extends State<VideoWidget> {
       widget.videoUrl,
     )..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
+        _controller.setLooping(true);
+        // _controller.play();
       });
   }
 
@@ -36,18 +37,18 @@ class _VideoWidgetState extends State<VideoWidget> {
               )
             : Container(),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _controller.value.isPlaying
-                ? _controller.pause()
-                : _controller.play();
-          });
-        },
-        child: Icon(
-          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-        ),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     setState(() {
+      //       _controller.value.isPlaying
+      //           ? _controller.pause()
+      //           : _controller.play();
+      //     });
+      //   },
+      //   child: Icon(
+      //     _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+      //   ),
+      // ),
     );
   }
 

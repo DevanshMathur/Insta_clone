@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../app/ui/home/home_screen.dart';
+import '../../home.dart';
 
 class Routes {
   Routes._();
@@ -7,7 +7,7 @@ class Routes {
   static const String homeScreen = '/';
 
   static final Map<String, WidgetBuilder> routes = {
-    homeScreen : (context) => const HomeScreen(),
+    homeScreen : (context) => const Home(),
   };
 
 }

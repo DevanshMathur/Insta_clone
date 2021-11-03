@@ -8,13 +8,16 @@ class CreateData {
   static int count = 0;
   static bool statusBool = true;
   static bool postBool = true;
-
+  static const String _image = "https:/static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg";
+  static const String _video1 = "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4";
+  static const String _video2 = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+  static const String _video = _video1;
   static void createStatus() {
     if (statusBool) {
       for (int i = 0; i < 10; i++) {
         statusList.add(
           Status(
-            "https: //static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg",
+            _image,
             "name${i + 1}",
           ),
         );
@@ -29,13 +32,13 @@ class CreateData {
         postList.add(
           Post(
             "Name $count",
-            "https: //static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg",
+            _image,
             "Location $count",
             "Caption $count",
             [
               [
                 PostTypeEnum.image.toString(),
-                    "https: //static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg"
+                    _image,
               ]
             ],
             null,
@@ -47,13 +50,13 @@ class CreateData {
         postList.add(
           Post(
             "Name $count",
-            "https: //static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg",
+            _image,
             "Location $count",
             "Caption $count",
             [
               [
                 PostTypeEnum.video.toString(),
-                    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                    _video,
               ]
             ],
             null,
@@ -65,11 +68,11 @@ class CreateData {
         postList.add(
           Post(
             "Name $count",
-            "https: //static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg",
+           _image,
             "Location $count",
             "Caption $count",
             null,
-            "https: //static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg",
+            _video,
           ),
         );
       }

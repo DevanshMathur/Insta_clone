@@ -12,7 +12,7 @@ class StatusWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(3),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             width: 58,

@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:insta_clone/src/app/ui/home/post_widget.dart';
+import 'package:insta_clone/src/app/ui/home/widgets/custom_app_bar.dart';
+import 'package:insta_clone/src/app/ui/home/widgets/post_widget.dart';
+import 'package:insta_clone/src/app/ui/home/widgets/status_widget.dart';
+import 'package:insta_clone/src/utils/create_data.dart';
 
-import './status_widget.dart';
-import './../../../utils/create_data.dart';
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    CreateData.createStatus();
-    CreateData.createPost(1, 1, 1);
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 30,
-        title: Text(
-          "Instagram",
-          style: Theme.of(context).textTheme.headline1,
+      appBar: PreferredSize(
+        preferredSize: Size(
+          MediaQuery.of(context).size.width,
+          40.0,
         ),
+        child: CustomAppBar(message, shareNew),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -39,15 +37,23 @@ class HomeScreen extends StatelessWidget {
               thickness: 2,
             ),
             ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: CreateData.postList.length,
-                  itemBuilder: (context, position) =>
-                      PostWidget(CreateData.postList[position]),
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: CreateData.postList.length,
+              itemBuilder: (context, position) =>
+                  PostWidget(CreateData.postList[position]),
             ),
           ],
         ),
       ),
     );
+  }
+
+  void shareNew() {
+    print("Share new clicked");
+  }
+
+  void message() {
+    print("Message clicked");
   }
 }
