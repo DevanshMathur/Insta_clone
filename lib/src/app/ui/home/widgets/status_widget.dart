@@ -10,14 +10,11 @@ class StatusWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(3),
+      margin: const EdgeInsets.fromLTRB(2, 5, 2, 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            width: 58,
-            child: CircularImageWidget(user.imageUrl),
-          ),
+          CircularImageWidget(user.imageUrl, 58),
           Text(
             user.name,
             style: Theme.of(context).textTheme.bodyText1,

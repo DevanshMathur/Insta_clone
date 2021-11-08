@@ -12,6 +12,7 @@ class VideoWidget extends StatefulWidget {
 
 class _VideoWidgetState extends State<VideoWidget> {
   late VideoPlayerController _controller;
+  bool errorFound = false;
 
   @override
   void initState() {
@@ -21,22 +22,26 @@ class _VideoWidgetState extends State<VideoWidget> {
       widget.videoUrl,
     )..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        _controller.setLooping(true);
+        setState(() {
+          _controller.setLooping(true);
+        });
         // _controller.play();
-      });
+      }).onError((error, stackTrace) {
+        setState(() {
+          errorFound = true;
+        });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: _controller.value.isInitialized
-            ? AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              )
-            : Container(),
-      ),
+    return Center(
+      child: _controller.value.isInitialized
+          ? AspectRatio(
+              aspectRatio: _controller.value.aspectRatio,
+              child: VideoPlayer(_controller),
+            )
+          : errorFound ? const Text("Error Found") :const CircularProgressIndicator(),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {
       //     setState(() {

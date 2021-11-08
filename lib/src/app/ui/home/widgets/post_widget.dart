@@ -25,7 +25,7 @@ class PostWidget extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(2, 2, 2, 5),
-                    child: CircularImageWidget(post.profileUrl),
+                    child: CircularImageWidget(post.profileUrl, 35),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(2),

@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
             icon: Icon(
               Icons.smart_display_outlined,
             ),
-            label: "Reel",
+            label: "Reels",
           ),
           BottomNavigationBarItem(
             icon: Icon(
