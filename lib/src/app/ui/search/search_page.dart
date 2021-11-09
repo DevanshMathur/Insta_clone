@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/src/app/ui/widgets/square_image_view.dart';
+import 'package:insta_clone/src/utils/create_data.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -8,21 +9,27 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double size = 200.0;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Search Screen"),
+        title: const Text("Search"),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(Icons.search_outlined),
+          )
+        ],
       ),
-      body: Center(
-        child: Container(
-          height: size,
-          width: size,
-          decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-          child: const ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(98)),
-            child: SquareImageWidget(url),
-          ),
+      body: GridView.builder(
+        itemCount: 40,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 1,
+          crossAxisSpacing: 4,
+          mainAxisSpacing: 4,
         ),
+        itemBuilder: (BuildContext context, int index) {
+          return const SquareImageWidget(CreateData.image1, false);
+        },
       ),
     );
   }

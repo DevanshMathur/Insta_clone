@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/src/app/repository/model/post.dart';
-import 'package:insta_clone/src/app/repository/model/post_type_enum.dart';
 import 'package:insta_clone/src/app/ui/widgets/circular_image_widget.dart';
 import 'package:insta_clone/src/app/ui/widgets/square_image_view.dart';
 import 'package:insta_clone/src/app/ui/widgets/video_widget.dart';
@@ -55,7 +54,7 @@ class PostWidget extends StatelessWidget {
           // decoration: BoxDecoration(border: Border.all(color: Colors.black)),
           child: post.posts != null
               ? post.posts![0][0] == PostTypeEnum.image.toString()
-                  ? SquareImageWidget(post.posts![0][1])
+                  ? SquareImageWidget(post.posts![0][1], false)
                   : VideoWidget(post.posts![0][1])
               : VideoWidget(post.reelUrl!),
         ),

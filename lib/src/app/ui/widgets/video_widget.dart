@@ -25,7 +25,7 @@ class _VideoWidgetState extends State<VideoWidget> {
         setState(() {
           _controller.setLooping(true);
         });
-        // _controller.play();
+        _controller.play();
       }).onError((error, stackTrace) {
         setState(() {
           errorFound = true;

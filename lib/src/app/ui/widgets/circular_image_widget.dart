@@ -14,7 +14,7 @@ class CircularImageWidget extends StatelessWidget {
       width: size,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(size/2),
-        child: SquareImageWidget(imageUrl),
+        child: SquareImageWidget(imageUrl,true),
       ),
     );
   }

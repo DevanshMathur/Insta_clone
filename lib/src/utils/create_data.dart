@@ -1,5 +1,4 @@
 import 'package:insta_clone/src/app/repository/model/post.dart';
-import 'package:insta_clone/src/app/repository/model/post_type_enum.dart';
 import 'package:insta_clone/src/app/repository/model/status.dart';
 
 class CreateData {
@@ -13,7 +12,7 @@ class CreateData {
   static const String video2 =
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
   static const String image1 =
-      "https:/static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg";
+      "https://static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg";
   static const String _image = image1;
   static const String _video = video1;
   static Post testPost = Post(

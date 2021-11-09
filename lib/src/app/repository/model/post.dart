@@ -1,3 +1,8 @@
+enum PostTypeEnum {
+  image,
+  video,
+}
+
 class Post {
   final String name;
   final int likeCount;
