@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/src/app/repository/model/post.dart';
 import 'package:insta_clone/src/app/ui/widgets/circular_image_widget.dart';
+import 'package:insta_clone/src/app/ui/widgets/like_widget.dart';
 import 'package:insta_clone/src/app/ui/widgets/square_image_view.dart';
 import 'package:insta_clone/src/app/ui/widgets/video_widget.dart';
 
@@ -65,9 +66,7 @@ class PostWidget extends StatelessWidget {
             children: [
               Row(
                 children: const [
-                  Icon(
-                    Icons.favorite_border_outlined,
-                  ),
+                  LikeWidget(),
                   Padding(
                     padding: EdgeInsets.fromLTRB(4,0,4,0),
                     child: Icon(

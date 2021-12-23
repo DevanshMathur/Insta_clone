@@ -5,6 +5,13 @@ class AddPostScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Add Post");
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Add Post"),
+      ),
+      body: Center(
+        child: Text("This section is under Development", style: Theme.of(context).textTheme.headline1,),
+      ),
+    );
   }
 }

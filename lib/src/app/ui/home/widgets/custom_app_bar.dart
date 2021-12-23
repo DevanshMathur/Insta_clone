@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:insta_clone/src/navigation/routes.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar(this.message, this.shareNew, {Key? key}) : super(key: key);
-  final Function message;
-  final Function shareNew;
+  const CustomAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class CustomAppBar extends StatelessWidget {
       ),
       actions: [
         InkWell(
-          onTap: () => shareNew(),
+          onTap: () => Navigator.pushNamed(context, Routes.addPostScreen),
           child: const Padding(
             padding: EdgeInsets.all(5),
             child: Icon(
@@ -24,7 +23,7 @@ class CustomAppBar extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () => message(),
+          onTap: () => Navigator.pushNamed(context, Routes.chatScreen),
           child: const Padding(
             padding: EdgeInsets.all(5),
             child: Icon(

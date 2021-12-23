@@ -5,11 +5,15 @@ class AppTheme {
       appBarTheme: const AppBarTheme(
         color: Colors.blue,
         titleTextStyle: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 18,
         ),
       ),
+    iconTheme: const IconThemeData(
+      color: Colors.black
+    ),
+      scaffoldBackgroundColor: Colors.white54,
       cardColor: Colors.lightBlue,
       primarySwatch: Colors.blue,
       textTheme: const TextTheme(
@@ -44,7 +48,11 @@ class AppTheme {
           fontSize: 18,
         ),
       ),
-      cardColor: Colors.black,
+      iconTheme: const IconThemeData(
+          color: Colors.white
+      ),
+      scaffoldBackgroundColor: Colors.black,
+      cardColor: Colors.black54,
       primarySwatch: Colors.blue,
       textTheme: const TextTheme(
           headline1: TextStyle(

@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
           MediaQuery.of(context).size.width,
           40.0,
         ),
-        child: CustomAppBar(message, shareNew),
+        child: const CustomAppBar(),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -49,11 +49,4 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  void shareNew() {
-    print("Share new clicked");
-  }
-
-  void message() {
-    print("Message clicked");
-  }
 }

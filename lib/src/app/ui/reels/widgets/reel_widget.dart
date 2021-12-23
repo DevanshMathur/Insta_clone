@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone/src/app/repository/model/post.dart';
+import 'package:insta_clone/src/app/ui/widgets/like_widget.dart';
 import 'package:insta_clone/src/app/ui/widgets/video_widget.dart';
 
-import 'circular_image_widget.dart';
+import '../../widgets/circular_image_widget.dart';
 
 class ReelWidget extends StatelessWidget {
   const ReelWidget(this.post, {Key? key}) : super(key: key);
@@ -92,9 +93,7 @@ class ReelWidget extends StatelessWidget {
                       children: [
                         const Padding(
                           padding: EdgeInsets.only(top: pad, bottom: pad),
-                          child: Icon(
-                            Icons.favorite_border_outlined,
-                          ),
+                          child: LikeWidget(),
                         ),
                         Text(post.likeCount.toString()),
                         const Padding(

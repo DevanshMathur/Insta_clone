@@ -28,7 +28,7 @@ class SearchPage extends StatelessWidget {
           mainAxisSpacing: 4,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return const SquareImageWidget(CreateData.image1, false);
+          return const SquareImageWidget(CreateData.image, false);
         },
       ),
     );

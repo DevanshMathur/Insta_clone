@@ -7,30 +7,32 @@ class CreateData {
   static bool statusBool = true;
   static List<Post> postList = [];
   static List<Status> statusList = [];
-  static const String video1 =
-      "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4";
-  static const String video2 =
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-  static const String image1 =
+
+  static const String _i1 =
       "https://static.foxnews.com/foxnews.com/content/uploads/2019/07/NJtruck720.jpg";
-  static const String _image = image1;
-  static const String _video = video1;
+  static const String _v1 =
+      "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4";
+  static const String _v2 =
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
+  static const String image = "_i1";
+  static const String video = "_v1";
   static Post testPost = Post(
     "Test Name",
-    _image,
+    image,
     "Test Location",
     "Test Caption",
     [
       [
         PostTypeEnum.image.toString(),
-        _image,
+        image,
       ],
       [
         PostTypeEnum.video.toString(),
-        _video,
+        video,
       ],
     ],
-    _video,
+    video,
     list,
     3,
     4,
@@ -54,7 +56,7 @@ class CreateData {
       for (int i = 0; i < 10; i++) {
         statusList.add(
           Status(
-            _image,
+            image,
             "name${i + 1}",
           ),
         );
@@ -69,13 +71,13 @@ class CreateData {
         postList.add(
           Post(
             "Name $count",
-            _image,
+            image,
             "Location $count",
             "Caption $count",
             [
               [
                 PostTypeEnum.image.toString(),
-                _image,
+                image,
               ]
             ],
             null,
@@ -90,13 +92,13 @@ class CreateData {
         postList.add(
           Post(
             "Name $count",
-            _image,
+            image,
             "Location $count",
             "Caption $count",
             [
               [
                 PostTypeEnum.video.toString(),
-                _video,
+                CreateData.video,
               ]
             ],
             null,
@@ -111,11 +113,11 @@ class CreateData {
         postList.add(
           Post(
             "Name $count",
-            _image,
+            image,
             "Location $count",
             "Caption $count",
             null,
-            _video,
+            CreateData.video,
             list,
             7,
             4,
